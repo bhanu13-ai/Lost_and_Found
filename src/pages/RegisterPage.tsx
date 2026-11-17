@@ -29,8 +29,11 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       setError('Please enter your full name.');
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      setError('Please enter a valid university email address.');
+    const saiEmailRegex = /^[a-zA-Z0-9._+-]+@(?:[a-zA-Z0-9_-]{4}\.)?saiuniversity\.edu\.in$/i;
+    if (!saiEmailRegex.test(email.trim())) {
+      setError(
+        'Please use a valid Sai University email (e.g., name@saiuniversity.edu.in or bhanusri.m-29@abcd.saiuniversity.edu.in).'
+      );
       return;
     }
     if (studentId.trim().length < 3) {
@@ -118,9 +121,12 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="name@saiuniversity.edu.in"
+              placeholder="bhanusri.m-29@abcd.saiuniversity.edu.in"
               className="mt-1.5 w-full rounded-lg border border-slate-300 bg-[#F8FAFC] px-3.5 py-2.5 text-sm text-[#14213D] focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
             />
+            <p className="mt-1 text-xs text-slate-500">
+              Supports @saiuniversity.edu.in or @xxxx.saiuniversity.edu.in (4 characters + dot).
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

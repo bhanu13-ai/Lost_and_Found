@@ -25,9 +25,12 @@ router.post('/register', async (req, res) => {
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email.trim())) {
-      res.status(400).json({ error: 'Please provide a valid university email address.' });
+    const saiEmailRegex = /^[a-zA-Z0-9._+-]+@(?:[a-zA-Z0-9_-]{4}\.)?saiuniversity\.edu\.in$/i;
+    if (!email || !saiEmailRegex.test(email.trim())) {
+      res.status(400).json({
+        error:
+          'Please provide a valid Sai University email (e.g., name@saiuniversity.edu.in or bhanusri.m-29@abcd.saiuniversity.edu.in).',
+      });
       return;
     }
 

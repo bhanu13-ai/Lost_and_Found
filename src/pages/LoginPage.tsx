@@ -98,7 +98,7 @@ export function LoginPage({ redirectPath, onNavigate }: LoginPageProps) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="name@saiuniversity.edu.in"
+              placeholder="bhanusri.m-29@abcd.saiuniversity.edu.in"
               className="mt-1.5 w-full rounded-lg border border-slate-300 bg-[#F8FAFC] px-3.5 py-2.5 text-sm text-[#14213D] focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
             />
           </div>
