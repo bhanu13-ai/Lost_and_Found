@@ -1,0 +1,8 @@
+{
+  "name": "Campus Lost & Found Portal — Sai University",
+  "description": "Official campus lost and found recovery platform for Sai University students, faculty, and staff to report, search, claim, and recover belongings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
